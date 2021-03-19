@@ -12,7 +12,7 @@ jobs:
         run: docker-compose up -d
       - run: docker-compose exec -T test false
         continue-on-error: true
-      - run: docker-compose exec -T test exit 3
+      - run: docker-compose exec -T test bash -c exit 3
         continue-on-error: true
       - run: echo "stderr $(docker-compose exec -T test false 2>&1 >/dev/null)"
         continue-on-error: true
