@@ -16,3 +16,6 @@ jobs:
         continue-on-error: true
       - run: echo "stderr $(docker-compose exec -T test false 2>&1 >/dev/null)"
         continue-on-error: true
+      - run: echo "stderr $(docker-compose exec -T test false 2>&1 >/dev/null)"
+        continue-on-error: true
+        shell: bash {0}
