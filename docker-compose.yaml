@@ -4,3 +4,4 @@ services:
     test:
         container_name: test
         image: ubuntu:18.04
+        command: sleep 100
