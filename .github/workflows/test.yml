@@ -10,5 +10,9 @@ jobs:
         uses: actions/checkout@v2
       - name: up
         run: docker-compose up -d
-      - name: test
-        run: docker-compose exec -T test false
+      - run: docker-compose exec -T test false
+        continue-on-error: true
+      - run: docker-compose exec -T test exit 3
+        continue-on-error: true
+      - run: echo "stderr $(docker-compose exec -T test false 2>&1 >/dev/null)"
+        continue-on-error: true
