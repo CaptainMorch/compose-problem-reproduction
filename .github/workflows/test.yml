@@ -1,0 +1,12 @@
+name: test
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: up
+        run: docker-compose up -d
+      - name: test
+        run: docker-compose exec -T test false
